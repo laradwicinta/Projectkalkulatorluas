@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Luas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <div class="switch">
+            <button onclick="show('Segitiga')">Hitung Luas Segitiga</button>
+            <button onclick="show('Lingkaran')">Hitung Luas Lingkaran</button>
+            <button onclick="show('JajarGenjang')">Hitung Luas Jajar Genjang</button>
+        </div>
+        <div class="card" id="luas-segitiga">
+            <div class="content">
+                <div class="content-title">
+                    <h4>Luas Segitiga</h4>
+                </div>
+                <hr />
+                <div class="rumus-container">
+                    <img src="triagle.png" width="100" alt="Gambar Segitiga" />
+                    <div class="rumus">
+                        <p>Rumus Luas Segitiga:</p>
+                        <p>L = 0.5 x base x height</p>
+                        <div class="penjelasan-variable">
+                            <p>- L = Luas Segitiga</p>
+                            <p>- base = alas</p>
+                            <p>- height = tinggi</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="jawaban"></div>
+                <div class="form-container">
+                    <div class="form-input">
+                        <form onsubmit="event.preventDefault(); hitung('Segitiga');">
+                            <label for="triangle-base">Alas:</label>
+                            <input type="number" min="1" class="input-alas" id="triangle-base" placeholder="Masukkan jumlah alas" required />
+                            <label for="triangle-height">Tinggi:</label>
+                            <input type="number" min="1" class="input-tinggi" id="triangle-height" placeholder="Masukkan jumlah tinggi" required />
+                            <button type="submit">Hitung</button>
+                        </form>
+                    </div>
+                    <button class="reset-button" onclick="reset('Segitiga')">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="luas-lingkaran" style="display: none">
+            <div class="content">
+                <div class="content-title">
+                    <h4>Luas Lingkaran</h4>
+                </div>
+                <hr />
+                <div class="rumus-container">
+                    <img src="circle1.png" width="100" alt="Gambar Lingkaran" />
+                    <div class="rumus">
+                        <p>Rumus Luas Lingkaran:</p>
+                        <p>L = π x r x r </p>
+                        <div class="penjelasan-variable">
+                            <p>- L = Luas</p>
+                            <p>- π = Phi</p>
+                            <p>- r = ruas</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="jawaban"></div>
+                <div class="form-container">
+                    <div class="form-input">
+                        <form onsubmit="event.preventDefault(); hitung('Lingkaran');">
+                            <label for="input-ruas">Ruas:</label>
+                            <input type="number" min="1" class="input-lingkaran" id="input-ruas" placeholder="Masukkan jumlah ruas" required />
+                            <button type="submit">Hitung</button>
+                        </form>
+                    </div>
+                    <button class="reset-button" onclick="reset('Lingkaran')">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="luas-jajargenjang" style="display: none">
+            <div class="content">
+                <div class="content-title">
+                    <h4>Luas Jajar Genjang</h4>
+                </div>
+                <hr />
+                <div class="rumus-container">
+                    <img src="jajargenjang.png" width="100" alt="Gambar Jajar Genjang" />
+                    <div class="rumus">
+                        <p>Rumus Luas Jajar Genjang:</p>
+                        <p>L = base x height</p>
+                        <div class="penjelasan-variable">
+                            <p>- L = Luas Persegi</p>
+                            <p>- base = alas</p>
+                            <p>- height = tinggi</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="jawaban"></div>
+                <div class="form-container">
+                    <div class="form-input">
+                        <form onsubmit="event.preventDefault(); hitung('JajarGenjang');">
+                            <label for="jjg-base">Alas:</label>
+                            <input type="number" min="1" class="input-alas" id="jjg-base" placeholder="Masukkan jumlah alas" required />
+                            <label for="jjg-height">Tinggi:</label>
+                            <input type="number" min="1" class="input-tinggi" id="jjg-height" placeholder="Masukkan jumlah tinggi" required />
+                            <button type="submit">Hitung</button>
+                        </form>
+                    </div>
+                    <button class="reset-button" onclick="reset('JajarGenjang')">Reset</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
